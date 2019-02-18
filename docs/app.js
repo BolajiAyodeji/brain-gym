@@ -10,8 +10,8 @@ GAME FUNCTIONS
 
 // Game values
 let min = 1,
-    max = 100,
-    winningNum = getWinnigNum(),
+    max = 10,
+    winningNum = getRandomNum(min, max),
     guessesLeft = 3;
 
 // UI Elements
@@ -87,8 +87,9 @@ function gameOver(won, msg) {
 }
 
 // Get winning num
-function getWinnigNum() {
-
+function getRandomNum(min, max) {
+  let calcRandom = Math.random() * (max - min + 1)+min;
+  return Math.floor(calcRandom);
 }
 
 // Set message
