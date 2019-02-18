@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-   <meta name="description" content="Simple number guessing game">
-   <title>Number Guesser</title>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
-   <link rel ="stylesheet" href="app.css">
-   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Simple number guessing game">
+  <title>Number Guesser</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <link rel="stylesheet" href="app.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
   <!-- Open Graph-->
   <meta property="og:type" content="website">
@@ -31,17 +32,19 @@
   <meta name="twitter:description" content="Simple number guessing game">
   <meta name="twitter:image" content="img/favicon.png">
 </head>
+
 <body>
   <div class="container">
     <h1>Number Guesser</h1>
     <div id="game">
-      <p>Guess a number between <span class="min-num">1</span> and <span class="max-num">10</span></p>
+      <p>Guess a number between <span class="min-num"></span> and <span class="max-num"></span></p>
       <input type="number" id="guess-input" placeholder="Enter your guess...">
-      <input type="submit" value="Submit" id="guess-value">
+      <input type="submit" value="Submit" id="guess-btn">
       <p class="message"></p>
     </div>
   </div>
 
   <script src="app.js"></script>
 </body>
+
 </html>
