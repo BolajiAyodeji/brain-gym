@@ -49,19 +49,19 @@ guessBtn.addEventListener('click', function() {
 
   // Validate guess
   if (isNaN(guess) || guess < min || guess > max) {
-    setMessage(`please enter a number between ${min} and ${max}`, 'red')
+    setMessage(`Please enter a number between ${min} and ${max}`, 'red')
   }
   // Check if won
   else if (guess === winningNum) {
     // Game over!
-    gameOver(true, ` Bingo 😀 ${winningNum} is correct, YOU WIN!`)
+    gameOver(true, ` Bingo! 😀 ${winningNum} is correct`)
   } else {
     // Wrong number
     guessesLeft -= 1
 
     if (guessesLeft === 0) {
       // Game over!
-      gameOver(false, `GameOver ☹ YOU LOST! The correct number is ${winningNum}`)
+      gameOver(false, `GameOver! ☹ The correct number is ${winningNum}`)
     } else {
       // Game continues, WRONG ANSWER!
 
