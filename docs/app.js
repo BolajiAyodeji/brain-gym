@@ -107,7 +107,6 @@ function gameOver(won, msg) {
 // Get winning num
 function getRandomNum(min, max) {
   let calcRandom = Math.random() * (max - min + 1) + min
-  console.log(Math.floor(calcRandom))
   return Math.floor(calcRandom)
 }
 
