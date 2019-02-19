@@ -20,11 +20,14 @@ const game = document.querySelector('#game'),
   maxNum = document.querySelector('.max-num'),
   guessBtn = document.querySelector('#guess-btn'),
   guessInput = document.querySelector('#guess-input'),
-  message = document.querySelector('.message')
+  message = document.querySelector('.message'),
+  guess = document.querySelector('.guess');
 
-// Assing UI min and max
+// Assing UI min, max and guess
 minNum.textContent = min
 maxNum.textContent = max
+guess.textContent = guessesLeft;
+
 
 // Play again event
 game.addEventListener('mousedown', function(e) {
