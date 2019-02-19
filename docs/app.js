@@ -48,31 +48,17 @@ guessBtn.addEventListener('click', function() {
   if (isNaN(guess) || guess < min || guess > max) {
     setMessage(`please enter a number between ${min} and ${max}`, 'red')
   }
-
   // Check if won
-  if (guess === winningNum) {
+  else if (guess === winningNum) {
     // Game over!
-
     gameOver(true, ` Bingo 😀 ${winningNum} is correct, YOU WIN!`)
-
-    // Set score
-    if (typeof Storage !== 'undefined') {
-      localStorage.setItem('score', 5)
-      const score = localStorage.getItem('score')
-      scoreBox.textContent = score
-    } else {
-      console.error('Local Storage not supported!')
-    }
   } else {
     // Wrong number
     guessesLeft -= 1
 
     if (guessesLeft === 0) {
       // Game over!
-      gameOver(
-        false,
-        `GameOver ☹ YOU LOST! The correct number is ${winningNum}`
-      )
+      gameOver(false, `GameOver ☹ YOU LOST! The correct number is ${winningNum}`)
     } else {
       // Game continues, WRONG ANSWER!
 
