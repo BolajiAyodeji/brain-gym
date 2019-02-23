@@ -12,8 +12,7 @@ GAME FUNCTIONS
 let min = 1,
   max = 10,
   winningNum = getRandomNum(min, max),
-  guessesLeft = 3,
-  playerScore = 5
+  guessesLeft = 3
 
 // UI Elements
 const game = document.querySelector('#game'),
@@ -34,7 +33,6 @@ guess.textContent = guessesLeft;
 game.addEventListener('mousedown', function(e) {
   if (e.target.className === 'play-again') {
     window.location.reload();
-    fetchScore();
   }
 })
 
@@ -92,7 +90,7 @@ function gameOver(won, msg) {
 
 // Get winning num
 function getRandomNum(min, max) {
-  let calcRandom = Math.random() * (max - min + 1) + min
+  let calcRandom = Math.random() * (max - min + 1) + min;
   console.log(Math.floor(calcRandom))
   return Math.floor(calcRandom)
 }
@@ -105,7 +103,7 @@ function setMessage(msg, color) {
 
 // add player score
 function addScore() {
-  let score = playerScore;
+  let score = 5;
 
   if (localStorage.getItem('scores') === null) {
     let scores = [];
