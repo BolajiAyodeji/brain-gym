@@ -33,7 +33,7 @@ guess.textContent = guessesLeft;
 // Play again event
 game.addEventListener('mousedown', function(e) {
   if (e.target.className === 'play-again') {
-    window.location.reload()
+    window.location.reload();
   }
 })
 
@@ -132,10 +132,7 @@ function fetchScore() {
   if (localStorage.getItem('scores') === null) {
 
   }else {
-    let score = scores
-    console.log(score)
-
-    scoresResult.innerHTML += '<button class="button-primary">' + score + '</button>';
+    scoresResult.innerHTML += '<button class="button-primary">' + scores + '</button>';
   }
 }
 
