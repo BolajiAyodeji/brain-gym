@@ -132,7 +132,7 @@ function fetchScore() {
   if (localStorage.getItem('scores') === null) {
 
   }else {
-    let score = scores[0]
+    let score = scores
     console.log(score)
 
     scoresResult.innerHTML += '<button class="button-primary">' + score + '</button>';
