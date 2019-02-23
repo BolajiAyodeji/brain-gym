@@ -112,7 +112,7 @@ function addScore() {
     localStorage.setItem('scores', JSON.stringify(scores));
   } else {
     let scores = JSON.parse(localStorage.getItem('scores'));
-    for (let i = 0; i < scores.length; i++){
+    for (let i = 0; i < 1; i++){
       scores[i] = scores[i] + 5;
   }
     localStorage.setItem('scores', JSON.stringify(scores));
