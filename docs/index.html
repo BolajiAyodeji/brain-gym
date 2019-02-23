@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="img/favicon.png">
 </head>
 
-<body>
+<body onload="fetchScore()">
   <div class="container">
     <h1>Brain Gym</h1>
     <div id="game">
@@ -42,10 +42,9 @@
       <input type="number" id="guess-input" placeholder="Enter your guess...">
       <input type="submit" value="Submit" id="guess-btn">
       <p class="message"></p>
-    </div>
-  </div>
+      <div id="playerScore"></div>
 
-  <script src="app.js"></script>
+      <script src="app.js"></script>
 </body>
 
 </html>

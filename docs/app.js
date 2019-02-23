@@ -12,7 +12,8 @@ GAME FUNCTIONS
 let min = 1,
   max = 10,
   winningNum = getRandomNum(min, max),
-  guessesLeft = 3
+  guessesLeft = 3,
+  playerScore = 5
 
 // UI Elements
 const game = document.querySelector('#game'),
@@ -36,13 +37,6 @@ game.addEventListener('mousedown', function(e) {
   }
 })
 
-// Create score box
-let scoreBox = document.createElement('button')
-scoreBox.className = 'button-primary'
-scoreBox.disabled = 'true'
-scoreBox.style.fontSize = '20px'
-game.appendChild(scoreBox)
-
 // Listen for guess
 guessBtn.addEventListener('click', function() {
   let guess = parseInt(guessInput.value)
@@ -55,6 +49,8 @@ guessBtn.addEventListener('click', function() {
   else if (guess === winningNum) {
     // Game over!
     gameOver(true, ` Bingo! 😀 ${winningNum} is correct`)
+    addScore();
+    fetchScore();
   } else {
     // Wrong number
     guessesLeft -= 1
@@ -96,6 +92,7 @@ function gameOver(won, msg) {
 // Get winning num
 function getRandomNum(min, max) {
   let calcRandom = Math.random() * (max - min + 1) + min
+  console.log(Math.floor(calcRandom))
   return Math.floor(calcRandom)
 }
 
@@ -104,3 +101,41 @@ function setMessage(msg, color) {
   message.textContent = msg
   message.style.color = color
 }
+
+// add player score
+function addScore() {
+  let score = playerScore;
+
+  if (localStorage.getItem('scores') === null) {
+    let scores = [];
+    scores.push(score);
+    localStorage.setItem('scores', JSON.stringify(scores));
+  } else {
+    let scores = JSON.parse(localStorage.getItem('scores'));
+    for (let i = 0; i < scores.length; i++){
+      scores[i] = scores[i] + 5;
+  }
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }
+}
+
+// fetch score
+function fetchScore() {
+  let scores = JSON.parse(localStorage.getItem('scores'));
+
+  // get output
+  let scoresResult = document.getElementById('playerScore');
+
+  // build output
+  scoresResult.innerHTML='';
+
+  if (localStorage.getItem('scores') === null) {
+
+  }else {
+    let score = scores[0]
+    console.log(score)
+
+    scoresResult.innerHTML += '<button class="button-primary">' + score + '</button>';
+  }
+}
+
